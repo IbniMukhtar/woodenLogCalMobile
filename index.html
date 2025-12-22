@@ -164,7 +164,12 @@ applyHeightBtn.onclick=()=>{
 };
 
 /* Volume calculation */
-function calculateVolume(g,f,i){ let ht=f+i/12; let q=g/4; return Math.round(((q*q)/144)*ht*100)/100; }
+//function calculateVolume(g,f,i){ let ht=f+i/12; let q=g/4; return Math.round(((q*q)/144)*ht*100)/100; }
+function calculateVolume(g, f, i) {
+    let ht = f + i / 12;
+    let q = g / 4;
+    return Math.floor((((q * q) / 144) * ht + 1e-9) * 100) / 100;
+}
 
 /* Add log */
 function addLog(){
@@ -269,5 +274,6 @@ function goToSummary(){ summaryCard.scrollIntoView({behavior:"smooth"}); }
 </script>
 </body>
 </html>
+
 
 
